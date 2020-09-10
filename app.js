@@ -41,17 +41,28 @@ Store.prototype.render = function () {
     mytable.appendChild(row);
 }
 
-function tablehead() {
-    var head = document.createElement('th');
-    
-    head.textContent = time[];
-    tableElement.appendChild(table);
-    for (let i = 0; i < time.length; i++) {
-        
-    }
-
+// time 
+function tablehead () {
+    var header = document.createElement ('tr');
+    tableel.appendChild(header);
+    var headerRow = document.createElement ('th');
+    header.textContent = 'Store location'
+    header.appendChild()
+        for (let i = 0; i < time.length; i++) {
+            var head = document.createElement('tr');
+            head.textContent = time[i];
+            headr
 }
 tablehead();
+
+
+// cookies each hour
+function createTableRow() {
+    var footer = document.createElement ('tr');
+    mytable.appendChild(footer);
+    var one
+} 
+
 
 var seattle = new Store('Seattle', 23, 65, 6.3);
 seattle.generateDailySales();
