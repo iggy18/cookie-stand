@@ -79,5 +79,9 @@ a{
     color: #f5f2d0;
     font-size:20px; 
     box-shadow: 4px 4px 11px #a13131;
+}
 
+#square {
+    border-radius:25px;
+    box-shadow: 15px 18px 11px #a13131;
 }
