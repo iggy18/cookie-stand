@@ -125,21 +125,16 @@ lima.render();
 tablefooter();
 
 forms.addEventListener('submit', addStore)
+addStore();
+addStore.render();
 
-function addStore (event) {
+function addStore(event) {
     event.preventDefault();
-    var {Name, MinSales, MaxSales, AvgSales} = event.target;
-    var store = new Store (Name.value, MinSales.value, MaxSales, AvgSales);
-    store.generateDailySales();
-    store.render();
+    var name = event.target.Name.value;
+    var min = parseInt(event.target.MinSales.value);
+    var max = parseInt(event.target.MaxSales.value);
+    var avg = parseInt(event.target.AvgSale.value);
+    var addStore = new Store(name,min,max,avg)
+    console.log('stores', stores);
+    addStore.render();
 }
-
-
-    //     var name = event.target.Name.value;
-//     var min = event.target.MinSales.value;
-//     var max = event.target.MaxSales.value;
-//     var avg = event.target.AvgSales.value;
-//     var addStore = new Store(name,min,max,avg)
-//     console.log('stores', stores);
-// addStore.render();
-// addStore();
