@@ -2,6 +2,7 @@
 // global variables can be used anywhere
 var time = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm","6pm","7pm"];
 var mytable = document.getElementById('table')
+var forms = document.getElementById('storeMaker')
 var stores = [];
 
 // makes store objects
@@ -119,6 +120,21 @@ paris.render();
 var lima = new Store('lima', 2, 16, 4.2);
 lima.generateDailySales();
 lima.render();
-    
+
+
 tablefooter();
 
+forms.addEventListener('submit', addStore)
+addStore();
+addStore.render();
+
+function addStore(event) {
+    event.preventDefault();
+    var name = event.target.Name.value;
+    var min = parseInt(event.target.MinSales.value);
+    var max = parseInt(event.target.MaxSales.value);
+    var avg = parseInt(event.target.AvgSale.value);
+    var addStore = new Store(name,min,max,avg)
+    console.log('stores', stores);
+    addStore.render();
+}
